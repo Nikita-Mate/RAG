@@ -58,7 +58,7 @@ def file_loader(document):
 def chatbot_short(query: str):
     
     #Getting a retriever of the vector store
-    folder = os.getcwd()+"\\temp-index\\"
+    folder = os.getcwd()+"\/temp-index\"
     knowledge_index = FAISS.load_local(folder_path=folder, index_name="index", embeddings=embeddings, allow_dangerous_deserialization=True)
     
     retriever = knowledge_index.as_retriever(search_type='similarity', search_kwargs={'k':3})
