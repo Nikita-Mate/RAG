@@ -72,7 +72,7 @@ def chatbot_short(query: str):
 
     #Azure OpenAI model 
     llm = AzureChatOpenAI(openai_api_version="2024-05-01-preview",
-                        azure_deployment="gpt35neo",
+                        azure_deployment="deployment_name",
                         temperature=0.2)
 
     #Building and invoking the RAG chain 
