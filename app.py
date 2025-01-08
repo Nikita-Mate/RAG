@@ -23,8 +23,8 @@ os.environ["AZURE_OPENAI_ENDPOINT"] = os.getenv("AZURE_OPENAI_ENDPOINT")
 os.environ["AZURE_OPENAI_API_KEY"] = os.getenv("AZURE_OPENAI_API_KEY")
 
 #Inititalizing Embeddings model
-embeddings = AzureOpenAIEmbeddings(azure_deployment="textembed",
-                                    openai_api_version="2024-05-01-preview")
+embeddings = AzureOpenAIEmbeddings(azure_deployment="deployment_name",
+                                    openai_api_version="api_version")
 
 
 ##Function for formating loaded documents
