@@ -68,7 +68,7 @@ def chatbot_short(query: str):
                                 metadata={'lc_hub_owner': 'rlm', 'lc_hub_repo': 'rag-prompt',
                                         'lc_hub_commit_hash': '50442af133e61576e74536c6556cefe1fac147cad032f4377b60c436e6cdcb6e'},
                                 messages=[HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context', 'question'], 
-                                                                                        template="You are an assistant for question-answering tasks. Your task is to answer users question. If user greets you (i.e. Hii, Hello, etc.,) greet them back politely. Use the following pieces of retrieved context to answer the question. If you don't know the answer then answer normally while informing that you can answer from the read PDF, try to output as bullet points whenever possible. Provide answer to question do not give extra text. Use two-three sentences maximum, and keep the answer concise.\nQuestion: {question} \nContext: {context} \nAnswer:"))])
+                                                                                        template="You are an assistant for question-answering tasks. Your task is to answer users question. If user greets you (i.e. Hii, Hello, etc.,) greet them back politely. Use the following pieces of retrieved context to answer the question. If you don't know the answer then answer normally while informing that you can answer from the read PDF, try to output as bullet points whenever possible. Provide answer to question do not give extra text. Keep the answer concise.\nQuestion: {question} \nContext: {context} \nAnswer:"))])
 
     #Azure OpenAI model 
     llm = AzureChatOpenAI(openai_api_version="2024-03-01-preview",
@@ -101,7 +101,7 @@ def chatbot_long(query: str):
                                 metadata={'lc_hub_owner': 'rlm', 'lc_hub_repo': 'rag-prompt',
                                         'lc_hub_commit_hash': '50442af133e61576e74536c6556cefe1fac147cad032f4377b60c436e6cdcb6e'},
                                 messages=[HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context', 'question'], 
-                                                                                        template="You are an assistant for question-answering tasks. If user greets you (i.e. Hii, Hello, etc.,) greet them back politely. Use the following pieces of retrieved context to answer the question. If you don't know the answer then answer normally while informing that you can answer from the read PDF, try to output as bullet points whenever possible. Use five-six sentences maximum.\nQuestion: {question} \nContext: {context} \nAnswer:"))])
+                                                                                        template="You are an assistant for question-answering tasks. Your task is to answer users question. If user greets you (i.e. Hii, Hello, etc.,) greet them back politely. Use the following pieces of retrieved context to answer the question. If you don't know the answer then answer normally while informing that you can answer from the read PDF, try to output as bullet points whenever possible. Provide answer to question do not give extra text. Provide detailed answer.\nQuestion: {question} \nContext: {context} \nAnswer:"))])
 
     #Azure OpenAI model 
     llm = AzureChatOpenAI(openai_api_version="2024-03-01-preview",
