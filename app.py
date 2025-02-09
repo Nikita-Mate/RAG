@@ -19,8 +19,8 @@ from langchain.text_splitter import CharacterTextSplitter
 load_dotenv()
 
 #Loading secrets
-os.environ["AZURE_OPENAI_ENDPOINT"] = os.getenv("AZURE_OPENAI_ENDPOINT")
-os.environ["AZURE_OPENAI_API_KEY"] = os.getenv("AZURE_OPENAI_API_KEY")
+os.environ["AZURE_OPENAI_ENDPOINT"] = "https://genailabs-southindia-openai.openai.azure.com/"
+os.environ["AZURE_OPENAI_API_KEY"] = "6cde902581d0496abd50a523c07df577"
 
 #Inititalizing Embeddings model
 embeddings = AzureOpenAIEmbeddings(azure_deployment="genaiLabs_emb_ada02_southIndia",
