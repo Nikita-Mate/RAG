@@ -19,11 +19,11 @@ from langchain.text_splitter import CharacterTextSplitter
 load_dotenv()
 
 #Loading secrets
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://genailabs-southindia-openai.openai.azure.com/"
-os.environ["AZURE_OPENAI_API_KEY"] = "6cde902581d0496abd50a523c07df577"
+os.environ["AZURE_OPENAI_ENDPOINT"] = st.secrets.endpoint
+os.environ["AZURE_OPENAI_API_KEY"] = st.secrets.apikey
 
 #Inititalizing Embeddings model
-embeddings = AzureOpenAIEmbeddings(azure_deployment="genaiLabs_emb_ada02_southIndia",
+embeddings = AzureOpenAIEmbeddings(azure_deployment=st.secrets.deploymentnameemd,
                                     openai_api_version="2024-03-01-preview")
 
 
@@ -72,7 +72,7 @@ def chatbot_short(query: str):
 
     #Azure OpenAI model 
     llm = AzureChatOpenAI(openai_api_version="2024-03-01-preview",
-                        azure_deployment="genaiLabs_gpt35Turbo_southIndia",
+                        azure_deployment=st.secrets.deployementnameopenai,
                         temperature=0.2)
 
     #Building and invoking the RAG chain 
@@ -105,7 +105,7 @@ def chatbot_long(query: str):
 
     #Azure OpenAI model 
     llm = AzureChatOpenAI(openai_api_version="2024-03-01-preview",
-                        azure_deployment="genaiLabs_gpt35Turbo_southIndia",
+                        azure_deployment=st.secrets.deployementnameopenai,
                         temperature=0.2)
 
     #Building and invoking the RAG chain 
