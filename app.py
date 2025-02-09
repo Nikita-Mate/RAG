@@ -23,8 +23,8 @@ os.environ["AZURE_OPENAI_ENDPOINT"] = os.getenv("AZURE_OPENAI_ENDPOINT")
 os.environ["AZURE_OPENAI_API_KEY"] = os.getenv("AZURE_OPENAI_API_KEY")
 
 #Inititalizing Embeddings model
-embeddings = AzureOpenAIEmbeddings(azure_deployment="deployment_name",
-                                    openai_api_version="api_version")
+embeddings = AzureOpenAIEmbeddings(azure_deployment="genaiLabs_emb_ada02_southIndia",
+                                    openai_api_version="2024-03-01-preview")
 
 
 ##Function for formating loaded documents
@@ -71,8 +71,8 @@ def chatbot_short(query: str):
                                                                                         template="You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer then answer normally while informing that you can answer from the read PDF, try to output as bullet points whenever possible. Use two-three sentences maximum, and keep the answer concise.\nQuestion: {question} \nContext: {context} \nAnswer:"))])
 
     #Azure OpenAI model 
-    llm = AzureChatOpenAI(openai_api_version="2024-05-01-preview",
-                        azure_deployment="deployment_name",
+    llm = AzureChatOpenAI(openai_api_version="2024-03-01-preview",
+                        azure_deployment="genaiLabs_gpt35Turbo_southIndia",
                         temperature=0.2)
 
     #Building and invoking the RAG chain 
@@ -104,8 +104,8 @@ def chatbot_long(query: str):
                                                                                         template="You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer then answer normally while informing that you can answer from the read PDF, try to output as bullet points whenever possible. Use five-six sentences maximum.\nQuestion: {question} \nContext: {context} \nAnswer:"))])
 
     #Azure OpenAI model 
-    llm = AzureChatOpenAI(openai_api_version="2024-05-01-preview",
-                        azure_deployment="gpt35neo",
+    llm = AzureChatOpenAI(openai_api_version="2024-03-01-preview",
+                        azure_deployment="genaiLabs_gpt35Turbo_southIndia",
                         temperature=0.2)
 
     #Building and invoking the RAG chain 
